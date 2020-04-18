@@ -6,9 +6,7 @@ import com.google.common.cache.CacheStats;
 import com.google.common.cache.LoadingCache;
 import org.example.model.Student;
 import org.example.service.StudentService;
-import org.slf4j.LoggerFactory;
 import java.util.concurrent.TimeUnit;
-import java.util.logging.Logger;
 
 public class CacheConfigManager {
 

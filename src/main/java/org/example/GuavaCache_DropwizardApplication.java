@@ -3,12 +3,10 @@ package org.example;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
+import org.checkerframework.checker.units.qual.C;
 import org.example.cache.CacheConfigManager;
 import org.example.resources.CacheResource;
 import org.example.service.StudentService;
-import org.slf4j.LoggerFactory;
-
-import java.util.logging.Logger;
 
 public class GuavaCache_DropwizardApplication extends Application<GuavaCache_DropwizardConfiguration> {
 
@@ -33,8 +31,9 @@ public class GuavaCache_DropwizardApplication extends Application<GuavaCache_Dro
         CacheConfigManager cacheConfigManager = CacheConfigManager
                 .getInstance();
         StudentService studentService = new StudentService();
+        CacheHandler cacheHandler = new CacheHandler();
         cacheConfigManager.initStudentCache(studentService);
-        environment.jersey().register(new CacheResource());
+        environment.jersey().register(new CacheResource(cacheHandler));
     }
 
 }

@@ -1,11 +1,9 @@
 package org.example.service;
 
 import org.example.model.Student;
-import org.slf4j.LoggerFactory;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 
 public class StudentService {
 
